@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 ?>
+=======
+>>>>>>> d17047e071f84493390fee2a131a26b7f898b336
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,6 +13,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="cabeçario.css">
 </head>
+<<<<<<< HEAD
+=======
+<body>
+
+>>>>>>> d17047e071f84493390fee2a131a26b7f898b336
 
 <body>
     <!-- ============== Cabeçalho ========= -->
@@ -41,7 +49,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<<<<<<< HEAD
 
 </html>
 
 
+=======
+</html>
+
+?>
+>>>>>>> d17047e071f84493390fee2a131a26b7f898b336
