@@ -8,12 +8,9 @@
 </head>
 <body>
 
-<!-- Navbar -->
-
-
-
-
-<!-- Fim do navbar-->
+<?php
+  include './nav\footer/navbar.php';
+?>
 
 <!-- Hero Section -->
 <section class="text-center bg-light py-5">
@@ -58,9 +55,11 @@
     </div>
   </div>
 </section>
+
 <div class="text-center my-3">
   <span class="px-3 bg-light text-secondary">✦</span>
 </div>
+
 <!-- Funcionalidades -->
 <section class="container py-5">
   <div class="row g-4">
@@ -69,7 +68,7 @@
         <div class="card-body text-center">
           <h5 class="card-title">Cadastrar Notas</h5>
           <p class="card-text">Adicione suas notas fiscais rapidamente, mantendo tudo organizado.</p>
-          <a href="Login.html" class="btn btn-success">Cadastrar</a>
+          <a href="login.php" class="btn btn-success">Cadastrar</a>
         </div>
       </div>
     </div>
@@ -78,7 +77,7 @@
         <div class="card-body text-center">
           <h5 class="card-title">Histórico</h5>
           <p class="card-text">Visualize todas as notas cadastradas e acompanhe seus gastos.</p>
-          <a href="historico.html" class="btn btn-primary">Ver Histórico</a>
+          <a href="historico.php" class="btn btn-primary">Ver Histórico</a>
         </div>
       </div>
     </div>
@@ -87,16 +86,17 @@
         <div class="card-body text-center">
           <h5 class="card-title">Relatórios</h5>
           <p class="card-text">Gere relatórios de despesas mensais ou por supermercado.</p>
-          <a href="relatorio.html" class="btn btn-warning text-white">Gerar Relatório</a>
+          <a href="relatorio.php" class="btn btn-warning text-white">Gerar Relatório</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
- 
-<!-- fim do footer-->
+<?php
+  // Aqui você também pode incluir um footer
+  // include 'footer.php';
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

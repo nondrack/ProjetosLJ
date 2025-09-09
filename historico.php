@@ -11,7 +11,9 @@
 
 <!-- Navbar -->
 
-
+<?php
+  include './nav\footer/navbar.php';
+?>
 
 
 <!-- Fim do navbar-->
