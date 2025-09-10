@@ -1,18 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.php">Notas Super</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="cadastro.php">Cadastrar Conta</a></li>
-        <li class="nav-item"><a class="nav-link" href="relatorio.php">Relatórios</a></li>
-      </ul>
+<?php
+// Inicia a sessão se ainda não tiver sido iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="cabeçarios.css"> <!-- Seu CSS personalizado -->
+</head>
+<body>
+  <nav class="navbar-custom">
+    <div class="container">
+      <a class="navbar-brand-custom" href="index.php">Notas Super</a>
+      <button class="navbar-toggler-custom" id="menuToggle">☰</button>
+      <div class="navbar-links" id="navbarLinks">
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="registro.php">NotasFiscais</a></li>
+          <li><a href="historico.php">Historico De Notas</a></li>
+
+          <?php if (!empty($_SESSION['usuario'])): ?>
+            <li><a href="#">👤 <?= htmlspecialchars($_SESSION['usuario']) ?></a></li>
+            <li><a href="logout.php">Sair</a></li>
+          <?php else: ?>
+            <li><a href="login.php">Login</a></li>
+          <?php endif; ?>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-
-
+  </nav>
+</body>
+</html>

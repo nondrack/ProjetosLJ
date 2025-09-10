@@ -1,0 +1,162 @@
+/* Navbar */
+.navbar-custom {
+  background: #0d6efd; 
+  padding: 15px 0;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  top: 0;
+
+}
+
+.navbar-custom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo / brand */
+.navbar-brand-custom {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand-custom:hover {
+  color: #ffc107;
+}
+
+/* Links */
+.navbar-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+
+.navbar-links ul li a:hover {
+  color: #ffd65d;
+    padding-right: 5px; 
+}
+
+.navbar-links ul li a:hover::after {
+  width: 100%;
+}
+
+/* Botão do menu mobile */
+.navbar-toggler-custom {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-toggler-custom {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar-links.active {
+    display: block;
+  }
+}
+
+
+
+
+/* footer */
+.footer {
+  background: #0d6efd; 
+  color: #fff;
+  padding: 30px 0 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer h5 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer h5::after {
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #ffc107; 
+  padding-left: 5px; 
+}
+
+.footer-col {
+  margin-bottom: 30px;
+}
+
+/* Linha inferior */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer h5::after {
+    margin: 5px auto 0;
+  }
+}

@@ -1,78 +1,42 @@
-// ===================== UTILITÁRIOS =====================
-function mostrarMensagem(elemento, texto, tipo) {
-  elemento.textContent = texto;
-  elemento.className = tipo === 'sucesso' ? 'text-success' : 'text-danger';
-}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-// ===================== LOGIN =====================
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  const mensagemLogin = document.getElementById('mensagem');
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('loginForm');
+  const usuario = document.getElementById('usuario');
+  const senha = document.getElementById('senha');
+  const mensagem = document.getElementById('mensagem');
 
-  loginForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const senha = document.getElementById('senha').value;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede o envio do formulário
 
-    const usuarioSalvo = localStorage.getItem('usuario');
-    const senhaSalva = localStorage.getItem('senha');
+    // Limpa mensagens anteriores
+    mensagem.textContent = '';
+    mensagem.className = 'text-center mt-2';
 
-    if (usuario === usuarioSalvo && senha === senhaSalva) {
-      mostrarMensagem(mensagemLogin, "✅ Login bem-sucedido! Redirecionando...", 'sucesso');
-      setTimeout(() => window.location.href = "index.html", 1500);
-    } else {
-      mostrarMensagem(mensagemLogin, "❌ Usuário ou senha incorretos!", 'erro');
-    }
-  });
-}
+    const usuarioValido = 'lucas';
+    const senhaValida = '123';
 
-// ===================== CADASTRO =====================
-const cadastroForm = document.getElementById('cadastroForm');
-if (cadastroForm) {
-  const mensagemCadastro = document.getElementById('mensagem');
-
-  cadastroForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const senha = document.getElementById('senha').value;
-    const confirmar = document.getElementById('confirmar').value;
-
-    if (senha !== confirmar) {
-      mostrarMensagem(mensagemCadastro, "⚠️ As senhas não coincidem!", 'erro');
+    if (usuario.value.trim() === '' || senha.value.trim() === '') {
+      mensagem.textContent = 'Por favor, preencha todos os campos.';
+      mensagem.classList.add('text-danger');
       return;
     }
 
-    localStorage.setItem('usuario', usuario);
-    localStorage.setItem('senha', senha);
+    if (usuario.value === usuarioValido && senha.value === senhaValida) {
+      mensagem.textContent = '✅ Login realizado com sucesso!';
+      mensagem.classList.remove('text-danger');
+      mensagem.classList.add('text-success');
+      
 
-    mostrarMensagem(mensagemCadastro, "✅ Conta criada com sucesso! Redirecionando...", 'sucesso');
-    setTimeout(() => window.location.href = "login.html", 1500);
+      // Redireciona para a home após 1 segundo
+      setTimeout(() => {
+        window.location.href = './js/index.php'; // Redireciona para a página inicial
+      }, 1000);
+    } else {
+      mensagem.textContent = '❌ Usuário ou senha incorretos.';
+      mensagem.classList.add('text-danger');
+    }
   });
-}
+});
 
-// ===================== HISTÓRICO =====================
-const tabela = document.getElementById('tabelaNotas');
-const relatorioGeral = document.getElementById('relatorioGeral');
 
-if (tabela && relatorioGeral) {
-  const notas = JSON.parse(localStorage.getItem('notas')) || [];
-  let totalGastos = 0;
-
-  notas.forEach((nota, index) => {
-    totalGastos += parseFloat(nota.valor);
-
-    const linha = document.createElement('tr');
-    linha.innerHTML = `
-      <td>${index + 1}</td>
-      <td>${nota.descricao}</td>
-      <td>${parseFloat(nota.valor).toFixed(2)}</td>
-      <td>${nota.data}</td>
-    `;
-    tabela.appendChild(linha);
-  });
-
-  relatorioGeral.innerHTML = `
-    <h5>Total de Notas: ${notas.length}</h5>
-    <h5>Total de Gastos: R$ ${totalGastos.toFixed(2)}</h5>
-  `;
-}

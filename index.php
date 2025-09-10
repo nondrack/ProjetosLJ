@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,10 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Sistema de Notas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./nav/footer/cabeçarios.css">
 </head>
 <body>
 
 <?php
+session_start();
   include './nav\footer/navbar.php';
 ?>
 
@@ -72,32 +78,25 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm h-100">
-        <div class="card-body text-center">
-          <h5 class="card-title">Histórico</h5>
-          <p class="card-text">Visualize todas as notas cadastradas e acompanhe seus gastos.</p>
-          <a href="historico.php" class="btn btn-primary">Ver Histórico</a>
-        </div>
-      </div>
-    </div>
+
     <div class="col-md-4">
       <div class="card shadow-sm h-100">
         <div class="card-body text-center">
           <h5 class="card-title">Relatórios</h5>
           <p class="card-text">Gere relatórios de despesas mensais ou por supermercado.</p>
-          <a href="relatorio.php" class="btn btn-warning text-white">Gerar Relatório</a>
+          <a href="historioco.php" class="btn btn-warning text-white">Gerar Relatório</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <?php
-  // Aqui você também pode incluir um footer
-  // include 'footer.php';
+  include './nav\footer/Rodape.php';
+  include './js/script.js'
 ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<
+
+
 </body>
 </html>

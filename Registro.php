@@ -5,100 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Notas Fiscais</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./nav/footer/cabeçarios.css">
 </head>
 <body class="bg-light">
 
 <?php
   include './nav\footer/navbar.php';
+
 ?>
 
   <div class="container py-5">
-    <h1 class="text-center mb-4">📑 Registro de Notas Fiscais</h1>
+  <h2 class="mb-4 text-center">📝 Registrar Nota Fiscal</h2>
 
-    <!-- Formulário -->
-    <div class="card shadow-sm mb-4">
-      <div class="card-body">
-        <form id="notaForm">
-          <div class="row g-3">
-            <div class="col-md-4">
-              <label for="numero" class="form-label">Número da Nota</label>
-              <input type="text" class="form-control" id="numero" required>
-            </div>
-            <div class="col-md-4">
-              <label for="data" class="form-label">Data</label>
-              <input type="date" class="form-control" id="data" required>
-            </div>
-            <div class="col-md-4">
-              <label for="fornecedor" class="form-label">Fornecedor</label>
-              <input type="text" class="form-control" id="fornecedor" required>
-            </div>
-            <div class="col-md-6">
-              <label for="valor" class="form-label">Valor (R$)</label>
-              <input type="number" class="form-control" id="valor" step="0.01" required>
-            </div>
-            <div class="col-md-6">
-              <label for="descricao" class="form-label">Descrição</label>
-              <input type="text" class="form-control" id="descricao">
-            </div>
-          </div>
-
-          <div class="mt-4 d-flex justify-content-end">
-            <button type="reset" class="btn btn-secondary me-2">Limpar</button>
-            <button type="submit" class="btn btn-primary">Salvar</button>
-          </div>
-        </form>
-      </div>
+  <form id="formNota">
+    <div class="mb-3">
+      <label for="chave" class="form-label">Chave da Nota Fiscal (44 dígitos)</label>
+      <input type="text" id="chave" class="form-control" maxlength="44" required>
     </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+  </form>
 
-    <!-- Tabela de Notas -->
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h5 class="mb-3">Notas Registradas</h5>
-        <table class="table table-bordered table-striped" id="tabelaNotas">
-          <thead class="table-dark">
-            <tr>
-              <th>Número</th>
-              <th>Data</th>
-              <th>Fornecedor</th>
-              <th>Valor (R$)</th>
-              <th>Descrição</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Registros aparecerão aqui -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+  <div id="resultado" class="mt-4"></div>
+</div>
 
-  <script>
-    const form = document.getElementById('notaForm');
-    const tabela = document.querySelector('#tabelaNotas tbody');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const numero = document.getElementById('numero').value;
-      const data = document.getElementById('data').value;
-      const fornecedor = document.getElementById('fornecedor').value;
-      const valor = document.getElementById('valor').value;
-      const descricao = document.getElementById('descricao').value;
-
-      const novaLinha = `
-        <tr>
-          <td>${numero}</td>
-          <td>${data}</td>
-          <td>${fornecedor}</td>
-          <td>R$ ${parseFloat(valor).toFixed(2)}</td>
-          <td>${descricao}</td>
-        </tr>
-      `;
-
-      tabela.insertAdjacentHTML('beforeend', novaLinha);
-      form.reset();
-    });
-  </script>
-
-</body>
-</html>

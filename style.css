@@ -1,0 +1,169 @@
+
+/* Estilo geral */
+body {
+  background: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Reset */
+* {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*============Home===================*/
+
+/* Hero Section */
+section.bg-light.py-5 {
+  background: #f8f9fa;
+}
+
+section.bg-light.py-5 h1 {
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+section.bg-light.py-5 p {
+  color: #495057;
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Botões */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Separador */
+.my-3 span.px-3.bg-light {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+
+
+
+
+
+/*================Registro=============*/
+/* Container do formulário */
+.container {
+
+  margin: 0 auto;
+}
+
+/* Título */
+.container h2 {
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 30px;
+}
+
+/* Formulário */
+#formNota {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Label */
+#formNota label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input */
+#formNota input {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+}
+
+#formNota input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13,110,253,0.3);
+  outline: none;
+}
+
+/* Botão */
+#formNota button {
+  background: #0d6efd;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#formNota button:hover {
+  background: #084298;
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 20px;
+}
+
+.alert {
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+
+/*==========Relatorio===========*/
+
+
+    h2 {
+      color: #0d6efd;
+      font-weight: 700;
+    }
+
+    #resumo h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .resumo-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display: inline-block;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    table {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: #0d6efd !important;
+      color: #fff;
+    }
+
+    .no-data {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ffc107;
+    }

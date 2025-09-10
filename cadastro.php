@@ -6,12 +6,14 @@
   <title>Cadastro - Sistema de Notas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="./nav/footer/cabeçarios.css">
 </head>
 <body>
 
 <!-- Navbar -->
 <?php
   include './nav\footer/navbar.php';
+  include './js/script.js'
 ?>
 <!-- Fim do navbar-->
 
@@ -32,7 +34,7 @@
         <input type="password" id="confirmar" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
-      <a href="login.html" class="btn btn-secondary w-100 mt-3">Voltar</a>
+      <a href="login.php" class="btn btn-secondary w-100 mt-3">Voltar</a>
       <p id="mensagem" class="text-center mt-2"></p>
     </form>
   </div>
